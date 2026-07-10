@@ -13,7 +13,7 @@ export default function BannerForm({ initialUrls }: { initialUrls: string }) {
     startTransition(async () => {
       const res = await saveBanners(formData);
       if (res?.error) {
-        setMessage("Error: " + res.error + " (Pastikan Vercel Blob sudah terhubung dan di-redeploy)");
+        setMessage("Error: " + res.error);
       } else {
         setMessage("Berhasil disimpan!");
       }

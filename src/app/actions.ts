@@ -226,8 +226,9 @@ export async function saveBanners(formData: FormData) {
     revalidatePath("/admin/banners");
     
     return { success: true };
-  } catch (error) {
-    return { error: "Gagal menyimpan banner" };
+  } catch (error: any) {
+    console.error("saveBanners error:", error);
+    return { error: error?.message || "Gagal menyimpan banner" };
   }
 }
 
