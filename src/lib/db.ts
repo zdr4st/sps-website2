@@ -16,11 +16,18 @@ const DEFAULT_BANNERS = [
   "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=2000"
 ];
 
+let cachedBlobUrl: string | null = null;
+
 async function dbBlobUrl(): Promise<string | null> {
+  if (cachedBlobUrl) return cachedBlobUrl;
   try {
     const { blobs } = await list({ prefix: DB_BLOB_PATHNAME });
     const match = blobs.find(b => b.pathname === DB_BLOB_PATHNAME);
-    return match ? match.url : null;
+    if (match) {
+      cachedBlobUrl = match.url;
+      return match.url;
+    }
+    return null;
   } catch {
     return null;
   }
@@ -46,15 +53,10 @@ export async function getDb(): Promise<Database> {
           homeBanners: DEFAULT_BANNERS
         };
       }
-      try {
-        await saveDb(initialData);
-      } catch (e) {
-        // ignore save error on seed
-      }
       return initialData;
     }
 
-    const res = await fetch(url, { cache: 'no-store' });
+    const res = await fetch(`${url}?t=${Date.now()}`, { cache: 'no-store' });
     const db: Database = await res.json();
 
     if (!db.homeBanners) {
@@ -82,14 +84,17 @@ export async function getDb(): Promise<Database> {
 }
 
 export async function saveDb(data: Database): Promise<void> {
-  const json = JSON.stringify(data, null, 2);
+  if (!data.homeBanners) {
+    data.homeBanners = DEFAULT_BANNERS;
+  }
   try {
-    const blob = new Blob([json], { type: 'application/json' });
-    await put(DB_BLOB_PATHNAME, blob, {
+    const blob = JSON.stringify(data);
+    const result = await put(DB_BLOB_PATHNAME, blob, {
       access: 'public',
       addRandomSuffix: false,
       allowOverwrite: true,
     });
+    cachedBlobUrl = result.url;
   } catch (err) {
     console.error('Vercel Blob save failed, falling back to local filesystem:', err);
     try {
