@@ -65,7 +65,7 @@ Saya sudah melihat simulasi kreditnya:
 - Tenor: ${selectedTenor} Bulan
 - Angsuran: ${formatRupiah(angsuran)} / bulan
 Apakah bisa dibantu prosesnya?`;
-    window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(text)}`, "_blank");
+    window.open(`https://wa.me/6282225498899?text=${encodeURIComponent(text)}`, "_blank");
   };
 
   return (

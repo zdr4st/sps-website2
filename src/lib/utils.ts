@@ -13,7 +13,7 @@ export function formatRupiah(number: number) {
   }).format(number);
 }
 
-export function generateWhatsAppLink(motorName: string, phoneNumber: string = "6281234567890") {
+export function generateWhatsAppLink(motorName: string, phoneNumber: string = "6282225498899") {
   const text = `Halo SPS Motor Ajibarang, saya tertarik dengan motor ${motorName}. Bisa minta info lebih lanjut?`;
   return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
 }

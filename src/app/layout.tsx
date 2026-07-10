@@ -88,9 +88,9 @@ export default function RootLayout({
             <div>
               <h4 className="font-semibold mb-4 text-gray-200">Hubungi Kami</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>Jl. Raya Ajibarang, Banyumas</li>
-                <li>Telepon: 0812-3456-7890</li>
-                <li>Buka: Senin - Sabtu (08:00 - 16:30)</li>
+                <li><a href="https://share.google/xhPziNvvtH6qktqc5" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Jl. Raya Ajibarang, Banyumas</a></li>
+                <li>Telepon: 0822-2549-8899</li>
+                <li>Buka: 08.00 - 17.00</li>
               </ul>
             </div>
           </div>

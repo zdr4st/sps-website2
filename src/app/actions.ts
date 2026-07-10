@@ -3,9 +3,8 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import { put } from "@vercel/blob";
 import { getDb, saveDb, Database } from "@/lib/db";
-import { Motorcycle, CreditOption } from "@/lib/mock-data";
+import { Motorcycle, CreditOption, getDefaultImageUrl } from "@/lib/mock-data";
 
 export async function login(formData: FormData) {
   const password = formData.get("password");
@@ -60,6 +59,10 @@ export async function uploadCsv(csvText: string) {
                             nameCol.charAt(0).toUpperCase() + nameCol.slice(1).toLowerCase();
           continue;
         }
+        if (nameCol === 'EV') {
+          currentCategory = 'EV';
+          continue;
+        }
         if (nameCol === '' && row[colOffset + 1] === '') continue;
 
         const isPrice = /^[0-9.]+$/.test(nameCol);
@@ -77,20 +80,16 @@ export async function uploadCsv(csvText: string) {
           }
 
           if (!motorcycles.find(m => m.id === currentMotorId) && currentMotorName.indexOf('#REF!') === -1) {
-            let image = "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800";
-            if (currentCategory === 'Sport') image = "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=800";
-            if (currentCategory === 'Matic') image = "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fd?auto=format&fit=crop&q=80&w=800";
-
-            motorcycles.push({
-              id: currentMotorId,
-              name: currentMotorName,
-              brand: "Honda",
-              type: currentCategory,
-              priceCash: currentPrice,
-              description: "Motor unggulan dari Honda.",
-              images: [image],
-              featureDetails: [{ name: "Fitur Unggulan Honda", description: "Motor dengan teknologi terdepan dari Honda." }]
-            });
+             motorcycles.push({
+               id: currentMotorId,
+               name: currentMotorName,
+               brand: "Honda",
+               type: currentCategory,
+               priceCash: currentPrice,
+               description: "Motor unggulan dari Honda.",
+               images: [getDefaultImageUrl(currentMotorName)],
+               featureDetails: [{ name: "Fitur Unggulan Honda", description: "Motor dengan teknologi terdepan dari Honda." }]
+             });
             creditMatrix[currentMotorId] = [];
           }
         }
@@ -175,23 +174,9 @@ export async function saveMotorcycle(id: string, formData: FormData) {
     const type = formData.get("type") as string;
     const description = formData.get("description") as string;
     
-    // Parse legacy comma separated strings
+    // Parse image URLs (comma separated)
     const imagesStr = formData.get("images") as string;
-    const legacyImages = imagesStr ? imagesStr.split(",").map(s => s.trim()).filter(Boolean) : [];
-    
-    // Handle new file uploads via Vercel Blob
-    const files = formData.getAll("new_images") as File[];
-    const newUploadUrls: string[] = [];
-    
-    for (const file of files) {
-       if (file.size > 0 && file.name && file.name !== "undefined") {
-           const filename = `uploads/motorcycles/${Date.now()}_${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
-           const { url } = await put(filename, file, { access: 'public' });
-           newUploadUrls.push(url);
-       }
-    }
-
-    const finalImages = [...legacyImages, ...newUploadUrls];
+    const images = imagesStr ? imagesStr.split(",").map(s => s.trim()).filter(Boolean) : [];
 
     // Parse featureDetails from JSON submitted by the admin form
     let featureDetails = db.motorcycles[motorIndex].featureDetails;
@@ -212,7 +197,7 @@ export async function saveMotorcycle(id: string, formData: FormData) {
       name,
       type,
       description,
-      images: finalImages.length > 0 ? finalImages : db.motorcycles[motorIndex].images,
+      images: images.length > 0 ? images : db.motorcycles[motorIndex].images,
       featureDetails,
     };
 
@@ -232,21 +217,9 @@ export async function saveBanners(formData: FormData) {
     const db = await getDb();
     
     const urlsStr = formData.get("urls") as string;
-    const existingBanners = urlsStr ? urlsStr.split("\n").map(s => s.trim()).filter(Boolean) : [];
-    
-    // Handle new file uploads via Vercel Blob
-    const files = formData.getAll("new_images") as File[];
-    const newUploadUrls: string[] = [];
-    
-    for (const file of files) {
-       if (file.size > 0 && file.name && file.name !== "undefined") {
-           const filename = `uploads/banners/${Date.now()}_${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
-           const { url } = await put(filename, file, { access: 'public' });
-           newUploadUrls.push(url);
-       }
-    }
+    const bannerUrls = urlsStr ? urlsStr.split("\n").map(s => s.trim()).filter(Boolean) : [];
 
-    db.homeBanners = [...existingBanners, ...newUploadUrls];
+    db.homeBanners = bannerUrls;
     
     await saveDb(db);
     revalidatePath("/");

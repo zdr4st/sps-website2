@@ -50,19 +50,7 @@ export default async function AdminBanners() {
               rows={6}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-sm font-mono whitespace-pre" 
             />
-            <p className="text-xs text-gray-500 mt-1">Hapus URL dari kotak ini untuk menghapus banner dari slideshow.</p>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Upload Banner Baru (Local)</label>
-            <input 
-              type="file" 
-              name="new_images" 
-              multiple
-              accept="image/*"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-sm bg-gray-50" 
-            />
-            <p className="text-xs text-gray-500 mt-1">Gambar yang diupload akan otomatis ditambahkan ke akhir daftar banner.</p>
+            <p className="text-xs text-gray-500 mt-1">Masukkan URL gambar dari ImageKit astra-honda.com atau sumber lain. Hapus URL untuk menghapus banner.</p>
           </div>
 
           <div className="flex justify-end pt-4">

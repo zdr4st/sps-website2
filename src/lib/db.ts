@@ -1,5 +1,7 @@
 import { put, list } from '@vercel/blob';
 import { mockMotorcycles, creditMatrix, Motorcycle, CreditOption } from './mock-data';
+import fs from 'fs';
+import path from 'path';
 
 export interface Database {
   motorcycles: Motorcycle[];
@@ -29,13 +31,26 @@ export async function getDb(): Promise<Database> {
     const url = await dbBlobUrl();
 
     if (!url) {
-      // Seed the database if it doesn't exist yet in blob storage
-      const initialData: Database = {
-        motorcycles: mockMotorcycles,
-        creditMatrix: creditMatrix,
-        homeBanners: DEFAULT_BANNERS
-      };
-      await saveDb(initialData);
+      let initialData: Database;
+      try {
+        const localData = fs.readFileSync(path.join(process.cwd(), 'data', 'db.json'), 'utf8');
+        initialData = JSON.parse(localData);
+        // Ensure default banners exist
+        if (!initialData.homeBanners) {
+          initialData.homeBanners = DEFAULT_BANNERS;
+        }
+      } catch {
+        initialData = {
+          motorcycles: mockMotorcycles,
+          creditMatrix: creditMatrix,
+          homeBanners: DEFAULT_BANNERS
+        };
+      }
+      try {
+        await saveDb(initialData);
+      } catch (e) {
+        // ignore save error on seed
+      }
       return initialData;
     }
 
@@ -44,26 +59,48 @@ export async function getDb(): Promise<Database> {
 
     if (!db.homeBanners) {
       db.homeBanners = DEFAULT_BANNERS;
-      await saveDb(db);
+      try {
+        await saveDb(db);
+      } catch (e) {
+        // ignore save error
+      }
     }
     return db;
   } catch (err) {
     console.error('getDb error:', err);
-    // Fallback to mock data if blob read fails
-    return {
-      motorcycles: mockMotorcycles,
-      creditMatrix: creditMatrix,
-      homeBanners: DEFAULT_BANNERS
-    };
+    try {
+      const localData = fs.readFileSync(path.join(process.cwd(), 'data', 'db.json'), 'utf8');
+      return JSON.parse(localData);
+    } catch {
+      return {
+        motorcycles: mockMotorcycles,
+        creditMatrix: creditMatrix,
+        homeBanners: DEFAULT_BANNERS
+      };
+    }
   }
 }
 
 export async function saveDb(data: Database): Promise<void> {
   const json = JSON.stringify(data, null, 2);
-  const blob = new Blob([json], { type: 'application/json' });
-  await put(DB_BLOB_PATHNAME, blob, {
-    access: 'public',
-    addRandomSuffix: false,
-    allowOverwrite: true,
-  });
+  try {
+    const blob = new Blob([json], { type: 'application/json' });
+    await put(DB_BLOB_PATHNAME, blob, {
+      access: 'public',
+      addRandomSuffix: false,
+      allowOverwrite: true,
+    });
+  } catch (err) {
+    console.error('Vercel Blob save failed, falling back to local filesystem:', err);
+    try {
+      const dataDir = path.join(process.cwd(), 'data');
+      if (!fs.existsSync(dataDir)) {
+        fs.mkdirSync(dataDir, { recursive: true });
+      }
+      fs.writeFileSync(path.join(dataDir, 'db.json'), json, 'utf8');
+    } catch (fsErr) {
+      console.error('Local save also failed:', fsErr);
+      throw err;
+    }
+  }
 }

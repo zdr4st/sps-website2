@@ -69,24 +69,14 @@ export default async function AdminMotorcycleEdit({
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700">Images (Existing URLs)</label>
+              <label className="block text-sm font-medium text-gray-700">Image URLs (ImageKit astra-honda.com)</label>
               <textarea 
                 name="images" 
                 defaultValue={motor.images.join(", ")}
                 rows={2}
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-sm" 
               />
-            </div>
-            <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700">Upload New Images (Local)</label>
-              <input 
-                type="file" 
-                name="new_images" 
-                multiple
-                accept="image/*"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-sm bg-gray-50" 
-              />
-              <p className="text-xs text-gray-500 mt-1">Gambar yang diupload akan ditambahkan ke gambar yang sudah ada.</p>
+              <p className="text-xs text-gray-500 mt-1">URL gambar dari ImageKit astra-honda.com (ik.imagekit.io). Pisahkan dengan koma jika lebih dari satu.</p>
             </div>
 
             {/* Feature Details editor */}
