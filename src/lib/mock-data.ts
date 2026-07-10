@@ -2609,9 +2609,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 4385000,
         "24": 2558000,
         "30": 2214000,
-        "36": 1970000,
-        "40": null,
-        "48": null
+        "36": 1970000
       }
     },
     {
@@ -2621,9 +2619,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 4375000,
         "24": 2552000,
         "30": 2209000,
-        "36": 1966000,
-        "40": null,
-        "48": null
+        "36": 1966000
       }
     },
     {
@@ -2633,9 +2629,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 4365000,
         "24": 2546000,
         "30": 2204000,
-        "36": 1961000,
-        "40": null,
-        "48": null
+        "36": 1961000
       }
     }
   ],
@@ -2647,9 +2641,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 4430000,
         "24": 2584000,
         "30": 2237000,
-        "36": 1990000,
-        "40": null,
-        "48": null
+        "36": 1990000
       }
     },
     {
@@ -2659,9 +2651,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 4420000,
         "24": 2578000,
         "30": 2232000,
-        "36": 1986000,
-        "40": null,
-        "48": null
+        "36": 1986000
       }
     },
     {
@@ -2671,9 +2661,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 4410000,
         "24": 2572000,
         "30": 2227000,
-        "36": 1982000,
-        "40": null,
-        "48": null
+        "36": 1982000
       }
     }
   ],
@@ -2685,9 +2673,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 2771000,
         "24": 1641000,
         "30": 1425000,
-        "36": 1281000,
-        "40": null,
-        "48": null
+        "36": 1281000
       }
     },
     {
@@ -2697,9 +2683,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 2766000,
         "24": 1638000,
         "30": 1422000,
-        "36": 1278000,
-        "40": null,
-        "48": null
+        "36": 1278000
       }
     },
     {
@@ -2709,9 +2693,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 2756000,
         "24": 1632000,
         "30": 1417000,
-        "36": 1274000,
-        "40": null,
-        "48": null
+        "36": 1274000
       }
     }
   ],
@@ -2723,9 +2705,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 5194000,
         "24": 3076000,
         "30": 2672000,
-        "36": 2402000,
-        "40": null,
-        "48": null
+        "36": 2402000
       }
     },
     {
@@ -2735,9 +2715,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 5184000,
         "24": 3071000,
         "30": 2667000,
-        "36": 2398000,
-        "40": null,
-        "48": null
+        "36": 2398000
       }
     },
     {
@@ -2747,9 +2725,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 5174000,
         "24": 3065000,
         "30": 2662000,
-        "36": 2393000,
-        "40": null,
-        "48": null
+        "36": 2393000
       }
     }
   ],
@@ -2761,9 +2737,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 5671000,
         "24": 3359000,
         "30": 2918000,
-        "36": 2623000,
-        "40": null,
-        "48": null
+        "36": 2623000
       }
     },
     {
@@ -2773,9 +2747,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 5661000,
         "24": 3353000,
         "30": 2913000,
-        "36": 2618000,
-        "40": null,
-        "48": null
+        "36": 2618000
       }
     },
     {
@@ -2785,9 +2757,7 @@ export const creditMatrix: Record<string, CreditOption[]> = {
         "12": 5651000,
         "24": 3347000,
         "30": 2908000,
-        "36": 2614000,
-        "40": null,
-        "48": null
+        "36": 2614000
       }
     }
   ],
