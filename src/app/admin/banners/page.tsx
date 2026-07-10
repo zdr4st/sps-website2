@@ -3,15 +3,11 @@ import { getDb } from "@/lib/db";
 import { saveBanners } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import BannerForm from "./BannerForm";
 
 export default async function AdminBanners() {
   const db = await getDb();
   const banners = db.homeBanners || [];
-
-  async function handleSubmit(formData: FormData) {
-    "use server";
-    await saveBanners(formData);
-  }
 
   return (
     <div>
@@ -41,24 +37,7 @@ export default async function AdminBanners() {
           )}
         </div>
 
-        <form action={handleSubmit} className="space-y-6 pt-6 border-t">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Edit Susunan URL Banner (Pisahkan dengan Enter / Baris Baru)</label>
-            <textarea 
-              name="urls" 
-              defaultValue={banners.join("\n")}
-              rows={6}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-sm font-mono whitespace-pre" 
-            />
-            <p className="text-xs text-gray-500 mt-1">Masukkan URL gambar dari ImageKit astra-honda.com atau sumber lain. Hapus URL untuk menghapus banner.</p>
-          </div>
-
-          <div className="flex justify-end pt-4">
-            <Button type="submit" className="font-bold text-white bg-primary hover:bg-primary/90 px-8">
-              Simpan Perubahan
-            </Button>
-          </div>
-        </form>
+        <BannerForm initialUrls={banners.join("\n")} />
       </div>
     </div>
   );
