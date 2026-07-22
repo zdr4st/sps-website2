@@ -1,3 +1,7 @@
+export interface ColorVariant {
+  name: string;
+  image: string;
+}
 
 export interface FeatureDetail {
   name: string;
@@ -13,6 +17,7 @@ export interface Motorcycle {
   priceCash: number;
   description: string;
   images: string[];
+  colors?: ColorVariant[];
   featureDetails: FeatureDetail[];
 }
 

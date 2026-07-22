@@ -37,7 +37,7 @@ export default async function MotorcycleDetail({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
           {/* Image Gallery */}
           <div className="space-y-6">
-            <MotorcycleGallery images={motor.images} name={motor.name} />
+            <MotorcycleGallery images={motor.images} name={motor.name} colors={motor.colors} />
           </div>
 
           {/* Details */}

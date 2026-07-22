@@ -201,12 +201,34 @@ export async function saveMotorcycle(id: string, formData: FormData) {
       }
     }
 
+    // Process color variants
+    const colors: { name: string; image: string }[] = [];
+    const colorCountStr = formData.get("colorCount") as string;
+    const colorCount = parseInt(colorCountStr || "0", 10);
+    
+    for (let i = 0; i < colorCount; i++) {
+      const colorName = formData.get(`colorName_${i}`) as string;
+      const colorFile = formData.get(`colorFile_${i}`) as File | null;
+      const colorUrl = formData.get(`colorUrl_${i}`) as string;
+      
+      if (!colorName) continue;
+      
+      let finalImageUrl = colorUrl || "";
+      if (colorFile && colorFile.size > 0) {
+        const blob = await put(`sps-images/${Date.now()}-${colorFile.name}`, colorFile, { access: 'public' });
+        finalImageUrl = blob.url;
+      }
+      
+      colors.push({ name: colorName, image: finalImageUrl });
+    }
+
     db.motorcycles[motorIndex] = {
       ...db.motorcycles[motorIndex],
       name,
       type,
       description,
       images: images.length > 0 ? images : db.motorcycles[motorIndex].images,
+      colors: colors.length > 0 ? colors : undefined,
       featureDetails,
     };
 

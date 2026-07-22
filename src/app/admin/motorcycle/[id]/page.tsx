@@ -4,6 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import { getDb } from "@/lib/db";
 import { saveMotorcycle } from "@/app/actions";
 import { Button } from "@/components/ui/button";
+import { MotorcycleColorEditor } from "@/components/MotorcycleColorEditor";
 
 export default async function AdminMotorcycleEdit({
   params,
@@ -136,6 +137,10 @@ export default async function AdminMotorcycleEdit({
               <p className="text-xs text-gray-400 mt-1">
                 Kolom <code className="bg-gray-100 px-1 rounded">image</code> bersifat opsional. Jika dikosongkan, kartu fitur akan menampilkan ikon default.
               </p>
+            </div>
+            
+            <div className="md:col-span-2">
+              <MotorcycleColorEditor initialColors={motor.colors} />
             </div>
           </div>
           
