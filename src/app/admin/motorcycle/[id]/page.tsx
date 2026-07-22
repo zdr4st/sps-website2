@@ -25,6 +25,8 @@ export default async function AdminMotorcycleEdit({
     const res = await saveMotorcycle(resolvedParams.id, formData);
     if (!res.error) {
       redirect("/admin");
+    } else {
+      console.error(res.error);
     }
   }
 
