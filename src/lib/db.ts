@@ -102,7 +102,8 @@ export async function saveDb(data: Database): Promise<void> {
       if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir, { recursive: true });
       }
-      fs.writeFileSync(path.join(dataDir, 'db.json'), json, 'utf8');
+      const dataStr = JSON.stringify(data, null, 2);
+      fs.writeFileSync(path.join(dataDir, 'db.json'), dataStr, 'utf8');
     } catch (fsErr) {
       console.error('Local save also failed:', fsErr);
       throw err;

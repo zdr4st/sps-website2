@@ -22,12 +22,10 @@ const FEAT_REVO_FIT: FeatureDetail[] = [
   {
     name: "Mesin eSP 110cc",
     description: "Mesin Enhanced Smart Power (eSP) 110cc berteknologi injeksi PGM-FI menghadirkan tenaga optimal dengan konsumsi bahan bakar yang hemat dan emisi rendah.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/esp-engine-1.jpg",
   },
   {
     name: "Sistem Pengereman CBS",
     description: "Combi Brake System (CBS) memastikan pengereman lebih merata dan stabil karena rem depan dan belakang bekerja secara bersamaan hanya dengan menekan tuas rem belakang.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/cbs-system-1.jpg",
   },
   {
     name: "Lampu Depan LED",
@@ -51,47 +49,38 @@ const FEAT_REVO_X: FeatureDetail[] = [
   {
     name: "Panel Meter Modern",
     description: "Lebih modern & keren dengan tampilan indikator fungsional yang lengkap. Khusus varian Revo X.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/panel-meter-modern-1-16042021-013234.jpg",
   },
   {
     name: "Pengaman Kunci Kontak Bermagnet Otomatis",
     description: "Sistem penguncian bermagnet otomatis mengurangi resiko pencurian. Dilengkapi Ilumi untuk pengoperasian dalam gelap. Hanya tipe Revo X.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/pengaman-kunci-kontak-bermagnet-otomatis-1-16042021-013238.jpg",
   },
   {
     name: "Lampu Depan & Lampu Sein Sporti",
     description: "Tampilan lampu depan New Honda Revo FI yang sporti siap memberikan pencahayaan yang terang. Lampu sein yang lebih besar dan terpisah dari lampu depan melengkapi tampilan kerennya.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/lampu-depan-lampu-sein-sporti-3-24012022-110439.jpeg",
   },
   {
     name: "Rem Cakram",
     description: "Dilengkapi rem cakram untuk tampilan sporti & keamanan berkendara yang lebih optimal.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/rem-cakram-1-16042021-013248.jpg",
   },
   {
     name: "Bagasi 7 Liter",
     description: "Ruang bagasi serbaguna yang besar, lebih fungsional & praktis untuk barang bawaan Anda.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/bagasi-7-liter-1-16042021-013258.jpg",
   },
   {
     name: "Tangki Bensin 4,0 L dengan Tempat Penutup Bensin",
     description: "Dengan volume tangki bensin lebih besar, mampu menempuh perjalanan lebih jauh dan dilengkapi tempat penutup bensin agar lebih praktis saat mengisi BBM.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/tangki-bensin-4-0-l-dengan-tempat-penutup-bensin-1-16042021-013304.jpg",
   },
   {
     name: "Lampu Belakang Dinamis",
     description: "Desain dinamis & sporti dengan lensa bening multireflektor yang keren serta aman saat berkendara.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/lampu-belakang-dinamis-1-16042021-013309.jpg",
   },
   {
     name: "Pijakan Kaki Belakang Sporti",
     description: "Desain pijakan kaki belakang yang sporti dan minim getaran, memberikan kenyamanan bagi pembonceng.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/pijakan-kaki-belakang-sporti-1-16042021-013312.jpg",
   },
   {
     name: "Knalpot Sporti",
     description: "Semakin keren dengan knalpot sporti & pelindung panas berlapis chrome.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/knalpot-sporti-1-16042021-013316.jpg",
   },
 ];
 
@@ -564,37 +553,30 @@ const FEAT_BEAT: FeatureDetail[] = [
   {
     name: "Combined Digital Panel Meter",
     description: "Semakin stylish dengan panel meter yang canggih dilengkapi lampu indikator ECO untuk kemudahan informasi berkendara.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/combined-digital-panel-meter-1.jpg",
   },
   {
     name: "Tuas Pengunci Rem (Brake Lock)",
     description: "Mencegah motor loncat saat mesin dihidupkan dan lebih nyaman saat berhenti di tanjakan atau turunan.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/tuas-pengunci-rem-1.jpg",
   },
   {
     name: "Functional Hook",
     description: "Membawa barang semakin mudah dengan adanya gantungan di depan.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/functional-hook-1.jpg",
   },
   {
     name: "Sistem Pencahayaan LED",
     description: "Sistem pencahayaan dengan teknologi LED berdesain modern membuat tampilanmu semakin keren.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/sistem-pencahayaan-led-1.jpg",
   },
   {
     name: "Bagasi Pas 12L",
     description: "Sekali ada tempat buat barang lebih banyak dengan kapasitas bagasi yang lebih besar.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/bagasi-pas-12l-1.jpg",
   },
   {
     name: "Standar Samping Otomatis (Side Stand Switch)",
     description: "Mesin tidak dapat dinyalakan saat standar samping dalam posisi turun sehingga mencegah pengendara lupa menaikkan standar samping.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/standar-samping-otomatis-1.jpg",
   },
   {
     name: "Anti Theft Alarm",
     description: "Sistem keamanan Anti Theft Alarm, untuk memberikan keamanan tambahan saat memarkirkan sepeda motor. *Tersedia pada tipe CBS dan CBS-ISS.",
-    image: "https://ik.imagekit.io/zlt25mb52fx/tr:q-90,f-auto,pr-true/uploads/product/feature/anti-theft-alarm-1.jpg",
   },
 ];
 
@@ -1005,31 +987,9 @@ export function getDefaultImageUrl(motorName: string): string {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
   
-  if (KNOWN_IMAGES[slug]) return KNOWN_IMAGES[slug];
-
-  if (slug.includes('stylo')) return "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/stylo-red-400x300pxl-1-02042026-044510.png";
-  if (slug.includes('crf-250') || slug.includes('crf250')) return KNOWN_IMAGES["crf-250-rally"];
-  if (slug.includes('cb-150-x') || slug.includes('cb150x')) return "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/thumbnail-product-cb150x-2-12112021-075912.png";
-  if (slug.includes('gtr')) return KNOWN_IMAGES["supra-gtr-sporty"];
-  if (slug.includes('supra')) return KNOWN_IMAGES["supra-x-125-d"];
-  if (slug.includes('revo')) return KNOWN_IMAGES["revo-x"];
-  if (slug.includes('pcx')) return KNOWN_IMAGES["pcx-cbs"];
-  if (slug.includes('adv')) return KNOWN_IMAGES["adv-150-cbs"];
-  if (slug.includes('vario-160') || slug.includes('vario-evo') || slug.includes('vario160')) return KNOWN_IMAGES["vario-160-cbs"];
-  if (slug.includes('vario')) return KNOWN_IMAGES["vario-125-cbs"];
-  if (slug.includes('scoopy')) return KNOWN_IMAGES["scoopy-sporty"];
-  if (slug.includes('genio')) return KNOWN_IMAGES["genio-cbs"];
-  if (slug.includes('beat-street')) return KNOWN_IMAGES["beat-street"];
-  if (slug.includes('beat')) return KNOWN_IMAGES["beat-cbs"];
-  if (slug.includes('monkey')) return KNOWN_IMAGES["monkey"];
-  if (slug.includes('em1')) return "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/em1-silver-samping-400x300-tr-1-21122023-045042.png";
-  if (slug.includes('icon')) return "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/ahm-light-sideview-blue-4-08102024-032201-1-09102024-051128.png";
-  if (slug.includes('cuv')) return "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/a01-p01-2025-cuve-mat-pearl-crater-white-rh-side-std-1-08102024-044120-1-09102024-053640.png";
-
-  return "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png";
+  return `/api/images?model=${slug}`;
 }
 
-// ─── Motorcycle catalog ───────────────────────────────────────────────────────
 
 export const mockMotorcycles: Motorcycle[] = [
   {
@@ -1040,7 +1000,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 19200000,
     "description": "Honda Revo FIT hadir sebagai motor bebek yang hemat dan andal untuk menemani aktivitas sehari-hari. Dengan mesin eSP 110cc berteknologi injeksi PGM-FI, Revo FIT menawarkan efisiensi bahan bakar yang luar biasa tanpa mengorbankan kehandalan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/thmbnail-product-2-24012022-110536.png"
+      getDefaultImageUrl("revo-fit")
     ],
     "featureDetails": FEAT_REVO_FIT,
   },
@@ -1052,7 +1012,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 20910000,
     "description": "New Honda Revo X tampil lebih sporty dan berkarakter dengan sejumlah fitur premium yang meningkatkan pengalaman berkendara. Dilengkapi panel meter modern, pengaman kunci bermagnet, dan rem cakram untuk tampilan sekaligus keamanan yang lebih baik.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/thmbnail-product-2-24012022-110536.png"
+      getDefaultImageUrl("revo-x")
     ],
     "featureDetails": FEAT_REVO_X,
   },
@@ -1064,7 +1024,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 22510000,
     "description": "Honda Supra X 125 D hadir dengan mesin eSP 125cc berinjeksi yang bertenaga namun irit BBM. Varian D menawarkan paket berkendara yang lengkap dengan tampilan yang dinamis dan modern.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/thumbnail-new-supra-x-5-04032022-102907.png"
+      getDefaultImageUrl("supra-x-125-d")
     ],
     "featureDetails": FEAT_SUPRA_X_125,
   },
@@ -1076,7 +1036,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 23720000,
     "description": "Honda Supra X 125 CW menghadirkan pengalaman berkendara bebek yang lebih premium dengan roda cast wheel (CW) yang lebih sporty, dilengkapi fitur-fitur canggih yang menjamin kenyamanan dan keamanan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/thumbnail-new-supra-x-5-04032022-102907.png"
+      getDefaultImageUrl("supra-x-125-cw")
     ],
     "featureDetails": FEAT_SUPRA_X_125,
   },
@@ -1088,7 +1048,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 28430000,
     "description": "Honda Supra GTR Sporty adalah puncak teknologi bebek Honda dengan mesin DOHC 150cc berpendingin cairan. Tampil sporty dengan suspensi USD dan performa mesin yang luar biasa untuk jiwa yang gemar kecepatan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/supra-gtr-150-4-27052021-092133.png"
+      getDefaultImageUrl("supra-gtr-sporty")
     ],
     "featureDetails": FEAT_SUPRA_GTR,
   },
@@ -1100,7 +1060,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 28680000,
     "description": "Honda Supra GTR Exc hadir dengan kelengkapan fitur yang lebih exclusive, menjadikannya pilihan terbaik bagi para penggemar bebek sport yang menginginkan performa dan teknologi terkini.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/supra-gtr-150-4-27052021-092133.png"
+      getDefaultImageUrl("supra-gtr-exc")
     ],
     "featureDetails": FEAT_SUPRA_GTR,
   },
@@ -1112,7 +1072,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 29820000,
     "description": "Honda Sonic hadir sebagai motor bebek sport dengan DNA balap yang sesungguhnya. Ditenagai mesin DOHC 150cc berpendingin cairan, Sonic menawarkan performa tinggi dalam paket desain yang agresif dan dinamis.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("sonic")
     ],
     "featureDetails": FEAT_SONIC,
   },
@@ -1124,7 +1084,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 30230000,
     "description": "Honda Sonic Special Edition menghadirkan semua keunggulan Sonic standar ditambah warna dan grafis eksklusif yang terbatas, menjadikannya koleksi yang sangat istimewa bagi para penggemar.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("sonic-special-edition")
     ],
     "featureDetails": FEAT_SONIC,
   },
@@ -1136,7 +1096,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 25820000,
     "description": "Honda CB Verza D adalah motor naked yang menawarkan gaya klasik dengan teknologi modern. Sangat cocok untuk penggunaan sehari-hari maupun touring, dengan kapasitas tangki besar dan posisi berkendara yang nyaman.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cb-verza-d")
     ],
     "featureDetails": FEAT_CB_VERZA,
   },
@@ -1148,7 +1108,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 26480000,
     "description": "Honda CB Verza CW tampil lebih sporty dengan velg cast wheel yang premium. Memadukan estetika naked bike klasik dengan kenyamanan dan keandalan yang menjadi ciri khas Honda.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cb-verza-cw")
     ],
     "featureDetails": FEAT_CB_VERZA,
   },
@@ -1160,7 +1120,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 35620000,
     "description": "Honda CB 150 R ExMotion adalah motor naked sport bermesin DOHC 150cc liquid-cooled yang menghadirkan performa tinggi dalam desain street fighter yang agresif dan modern.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cb-150-r")
     ],
     "featureDetails": FEAT_CB150R,
   },
@@ -1172,7 +1132,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 36630000,
     "description": "Honda CB 150 R Special Edition menghadirkan warna dan grafis eksklusif yang memperkuat karakter street fighter dari CB 150 R. Tampil beda dan berkarakter di jalanan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cb-150-r-se")
     ],
     "featureDetails": FEAT_CB150R,
   },
@@ -1184,7 +1144,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 40360000,
     "description": "Honda CBR 150R adalah supersport 150cc yang menghadirkan teknologi dan gaya MotoGP-inspired. Dengan mesin DOHC berpendingin cairan dan full fairing aerodinamis, CBR150R membawa sensasi racing ke jalanan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cbr-150-hs")
     ],
     "featureDetails": FEAT_CBR150,
   },
@@ -1196,7 +1156,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 41070000,
     "description": "Honda CBR 150R MP hadir dengan pilihan warna Matte Pearl yang elegan dan sporty, menghadirkan tampilan supersport yang semakin memukau dengan karakter yang berbeda.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cbr-150-mp")
     ],
     "featureDetails": FEAT_CBR150,
   },
@@ -1208,7 +1168,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 44610000,
     "description": "Honda CBR 150R ABS JNA menghadirkan keamanan berkendara yang lebih tinggi dengan sistem ABS dua channel, dilengkapi semua fitur premium CBR 150R untuk pengalaman supersport yang komprehensif.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cbr-150-abs-jna")
     ],
     "featureDetails": FEAT_CBR150,
   },
@@ -1220,7 +1180,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 45320000,
     "description": "Honda CBR 150R ABS JNS KE0 hadir dengan pilihan warna Victory Black Red yang garang, dilengkapi ABS dua channel untuk keamanan pengereman yang superior.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cbr-150-abs-jns-ke0")
     ],
     "featureDetails": FEAT_CBR150,
   },
@@ -1232,7 +1192,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 44610000,
     "description": "Honda CBR 150R ABS JNU KEA hadir dalam warna Extreme Red yang ikonik dengan sistem ABS yang menjamin keamanan berkendara di berbagai kondisi jalan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cbr-150-abs-jnu-kea")
     ],
     "featureDetails": FEAT_CBR150,
   },
@@ -1244,7 +1204,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 40180000,
     "description": "Honda CRF 150L adalah motor dual-purpose yang dirancang untuk menaklukkan segala medan. Dengan suspensi bertravel panjang, ground clearance tinggi, dan ban dual-purpose, CRF 150L siap membawa Anda ke mana pun petualangan membawa.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("crf-150")
     ],
     "featureDetails": FEAT_CRF150,
   },
@@ -1256,7 +1216,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 35910000,
     "description": "Honda CB 150 X adalah motor adventure crossover yang memadukan DNA off-road dengan kenyamanan urban. Ground clearance tinggi, ban adventure, dan mesin bertenaga menjadikannya pilihan ideal untuk eksplorasi jalan beragam.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/thumbnail-product-cb150x-2-12112021-075912.png"
+      getDefaultImageUrl("cb-150-x")
     ],
     "featureDetails": FEAT_CB150X,
   },
@@ -1268,7 +1228,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 36420000,
     "description": "Honda CB 150 X Special Edition tampil dengan warna dan grafis eksklusif yang memperkuat karakter adventure crossover-nya, menjadikannya pilihan berkelas bagi para penjelajah jalan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/thumbnail-product-cb150x-2-12112021-075912.png"
+      getDefaultImageUrl("cb-150-x-se")
     ],
     "featureDetails": FEAT_CB150X,
   },
@@ -1280,7 +1240,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 101310000,
     "description": "Honda CRF 250 Rally adalah motor adventure sport kelas dunia yang dirancang untuk petualangan tanpa batas. Dengan mesin parallel-twin 250cc dan teknologi terdepan, CRF 250 Rally adalah pilihan ultimate bagi petualang sejati.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/crf-250-web-banner-product-thumbnail-400x300px-16062025-032317.png"
+      getDefaultImageUrl("crf-250")
     ],
     "featureDetails": FEAT_CRF250,
   },
@@ -1292,7 +1252,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 89480000,
     "description": "Honda Monkey adalah ikon abadi yang telah melampaui waktu sejak 1961. Kini hadir dalam balutan teknologi modern dengan mesin 125cc berinjeksi, rem ABS, dan desain yang mempertahankan karakter orisinalnya yang memukau.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/product-thumbnail-408-03072026-061409.png"
+      getDefaultImageUrl("monkey")
     ],
     "featureDetails": FEAT_MONKEY,
   },
@@ -1304,7 +1264,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 84160000,
     "description": "Honda CT 125 Hunter Cub adalah motor serbaguna yang terinspirasi dari Super Cub legendaris dengan sentuhan adventure modern. Rak pengangkut besar, ban knobby, dan mesin berinjeksi menjadikannya teman sempurna untuk urban dan off-road ringan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("ct-125")
     ],
     "featureDetails": FEAT_CT125,
   },
@@ -1316,7 +1276,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 46121000,
     "description": "Honda EM1 e: adalah skuter listrik pertama Honda di Indonesia yang menggabungkan teknologi terdepan dengan kemudahan penggunaan. Baterai portabel Mobile Power Pack e: yang dapat dilepas memudahkan pengisian di mana saja.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/em1-silver-samping-400x300-tr-1-21122023-045042.png"
+      getDefaultImageUrl("em1-e-charger")
     ],
     "featureDetails": FEAT_EM1E,
   },
@@ -1328,7 +1288,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 46621000,
     "description": "Honda EM1 e: Plus hadir dengan dua unit baterai Mobile Power Pack e: yang memberikan jangkauan dua kali lebih jauh. Nikmati kebebasan berkendara listrik yang lebih panjang tanpa kompromi.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/em1-silver-samping-400x300-tr-1-21122023-045042.png"
+      getDefaultImageUrl("em1-e-plus-charger")
     ],
     "featureDetails": FEAT_EM1E_PLUS,
   },
@@ -1340,7 +1300,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 28147000,
     "description": "Honda ICON e: hadir sebagai skuter listrik yang stylish dan terjangkau, dirancang untuk generasi muda yang dinamis dan peduli lingkungan. Desain futuristik dan teknologi EV terkini dalam satu paket yang menarik.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/ahm-light-sideview-blue-4-08102024-032201-1-09102024-051128.png"
+      getDefaultImageUrl("icon-e")
     ],
     "featureDetails": FEAT_ICON_E,
   },
@@ -1352,7 +1312,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 54693000,
     "description": "Honda CUV e: adalah skuter listrik crossover utility vehicle yang memadukan desain futuristik dengan fungsionalitas tinggi. Kapasitas penyimpanan besar dan performa listrik yang handal untuk mobilitas perkotaan modern.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/a01-p01-2025-cuve-mat-pearl-crater-white-rh-side-std-1-08102024-044120-1-09102024-053640.png"
+      getDefaultImageUrl("cuv-e")
     ],
     "featureDetails": FEAT_CUVE,
   },
@@ -1364,7 +1324,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 59893000,
     "description": "Honda CUV e: Roadsync menghadirkan semua keunggulan CUV e: ditambah konektivitas Honda RoadSync untuk navigasi dan hiburan langsung dari panel instrumen. Skuter listrik paling cerdas untuk mobilitas urban modern.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/a01-p01-2025-cuve-mat-pearl-crater-white-rh-side-std-1-08102024-044120-1-09102024-053640.png"
+      getDefaultImageUrl("cuv-e-roadsync")
     ],
     "featureDetails": FEAT_CUVE_ROADSYNC,
   },
@@ -1376,7 +1336,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 21270000,
     "description": "Honda Beat adalah skuter matic terlaris Indonesia yang terkenal dengan kelincahan dan efisiensinya. Varian Sporty CBS menghadirkan tampilan sporty dengan keamanan Combi Brake System untuk berkendara yang lebih aman.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/new-thumbnail-beat-1-26062026-055630.png"
+      getDefaultImageUrl("beat-sporty-cbs")
     ],
     "featureDetails": FEAT_BEAT,
   },
@@ -1388,7 +1348,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 22070000,
     "description": "Honda Beat Sporty ISS Deluxe menghadirkan pengalaman berkendara matic yang lebih hemat dengan Idling Stop System, didukung fitur-fitur deluxe yang meningkatkan kenyamanan dan kepraktisan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/new-thumbnail-beat-1-26062026-055630.png"
+      getDefaultImageUrl("beat-sporty-iss-deluxe")
     ],
     "featureDetails": FEAT_BEAT_ISS,
   },
@@ -1400,7 +1360,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 22670000,
     "description": "Honda Beat ISS DX Smartkey adalah varian Beat paling premium dengan Smart Key System, Idling Stop System, dan fitur deluxe yang menjadikan berkendara lebih praktis, aman, dan menyenangkan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/new-thumbnail-beat-1-26062026-055630.png"
+      getDefaultImageUrl("beat-iss-dx-smartkey")
     ],
     "featureDetails": FEAT_BEAT_SMARTKEY,
   },
@@ -1412,7 +1372,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 22120000,
     "description": "New Honda Beat Street hadir dengan karakter yang lebih urban dan kasual, cocok untuk gaya hidup aktif generasi muda yang menyukai tampilan street casual yang trendi.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/new-thumbnail-beat-street-1-26062026-055644.png"
+      getDefaultImageUrl("new-beat-street")
     ],
     "featureDetails": FEAT_BEAT,
   },
@@ -1424,7 +1384,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 22210000,
     "description": "Honda Genio menghadirkan pesona retro modern yang tak lekang oleh waktu. Desain bulat yang unik dan charming dipadukan dengan teknologi mesin eSP 110cc yang efisien dan performa CBS yang aman.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/thumbnail-genio-new-3-29102025-075221.png"
+      getDefaultImageUrl("genio-cbs")
     ],
     "featureDetails": FEAT_GENIO,
   },
@@ -1436,7 +1396,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 22470000,
     "description": "Honda Genio CBS Special Color hadir dalam warna-warna spesial yang lebih segar dan trendi, mempertahankan semua keunggulan Genio CBS standar dengan sentuhan estetika yang lebih menarik.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/thumbnail-genio-new-3-29102025-075221.png"
+      getDefaultImageUrl("genio-cbs-spc-color")
     ],
     "featureDetails": FEAT_GENIO,
   },
@@ -1448,7 +1408,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 22770000,
     "description": "Honda Genio CBS ISS menambahkan Idling Stop System yang menghemat konsumsi BBM secara signifikan, menjadikannya pilihan ideal bagi mereka yang menginginkan motor retro yang indah sekaligus hemat.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/thumbnail-genio-new-3-29102025-075221.png"
+      getDefaultImageUrl("genio-cbs-iss")
     ],
     "featureDetails": FEAT_GENIO_ISS,
   },
@@ -1460,7 +1420,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 25350000,
     "description": "Honda Scoopy adalah ikon skuter retro-modern yang dicintai jutaan pengguna. Desain bulat yang khas, warna-warna cerah yang menarik, dan performa mesin eSP 110cc yang handal menjadikan Scoopy teman berkendara yang sempurna.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/product-thumbnail-400x300-copy-1-13112025-030828.png"
+      getDefaultImageUrl("scoopy-std")
     ],
     "featureDetails": FEAT_SCOOPY,
   },
@@ -1472,7 +1432,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 26230000,
     "description": "Honda Scoopy Smart Key menghadirkan kemudahan yang sesungguhnya dengan sistem Smart Key yang memungkinkan menyalakan motor tanpa perlu memasukkan kunci secara fisik, melengkapi pesona retro-modern Scoopy.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/product-thumbnail-400x300-copy-1-13112025-030828.png"
+      getDefaultImageUrl("scoopy-smart-key")
     ],
     "featureDetails": FEAT_SCOOPY_SK,
   },
@@ -1484,7 +1444,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 26530000,
     "description": "Honda Vario 125 CBS adalah skuter matic yang memadukan performa mesin eSP 125cc dengan kapasitas penyimpanan terbesar di kelasnya. Ideal untuk mereka yang membutuhkan motor matic yang bertenaga, efisien, dan fungsional.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/sideview-advance-blue-400x300pxl-copy-07042026-080156.png"
+      getDefaultImageUrl("vario-125-cbs")
     ],
     "featureDetails": FEAT_VARIO125,
   },
@@ -1496,7 +1456,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 28380000,
     "description": "Honda Vario 125 ISS menghadirkan efisiensi bahan bakar yang lebih baik dengan Idling Stop System yang otomatis mematikan mesin saat motor berhenti dan menghidupkannya kembali saat gas diputar.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/sideview-advance-blue-400x300pxl-copy-07042026-080156.png"
+      getDefaultImageUrl("vario-125-iss")
     ],
     "featureDetails": FEAT_VARIO125_ISS,
   },
@@ -1508,7 +1468,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 28840000,
     "description": "Honda Vario 125 Street hadir dengan karakter urban yang lebih kuat, memadukan performa Vario 125 ISS dengan tampilan warna khusus yang lebih edgy dan berkarakter untuk jiwa muda perkotaan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/sideview-advance-blue-400x300pxl-copy-07042026-080156.png"
+      getDefaultImageUrl("vario-125-street")
     ],
     "featureDetails": FEAT_VARIO125_ISS,
   },
@@ -1520,7 +1480,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 30240000,
     "description": "Honda Vario EVO 160 CBS adalah evolusi terbaru dari keluarga Vario yang legendaris. Dengan mesin eSP+ 160cc berpendingin cairan dan teknologi HSTC, Vario EVO 160 menghadirkan performa yang signifikan lebih bertenaga.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/product-thumbnail-400x300px-6-24062026-031459.png"
+      getDefaultImageUrl("vario-evo-160-cbs")
     ],
     "featureDetails": FEAT_VARIO160,
   },
@@ -1532,7 +1492,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 30490000,
     "description": "Honda Vario EVO 160 CBS Nitro hadir dalam warna Nitro Yellow yang berani dan mencolok, menghadirkan karakter yang lebih sporty dan agresif sesuai performanya yang luar biasa.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/product-thumbnail-400x300px-6-24062026-031459.png"
+      getDefaultImageUrl("vario-evo-160-cbs-nitro")
     ],
     "featureDetails": FEAT_VARIO160,
   },
@@ -1544,7 +1504,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 33360000,
     "description": "Honda Vario EVO 160 ABS adalah puncak kesempurnaan skuter matic Honda dengan tambahan sistem ABS dual-channel yang memberikan keamanan pengereman terbaik di kelasnya.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/product-thumbnail-400x300px-6-24062026-031459.png"
+      getDefaultImageUrl("vario-evo-160-abs")
     ],
     "featureDetails": FEAT_VARIO160_ABS,
   },
@@ -1556,7 +1516,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 31520000,
     "description": "Honda Stylo 160 CBS adalah skuter premium dengan desain neo-retro yang eksklusif, layar TFT full-color, dan teknologi Honda RoadSync untuk konektivitas smartphone yang seamless.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/stylo-red-400x300pxl-1-02042026-044510.png"
+      getDefaultImageUrl("stylo-cbs")
     ],
     "featureDetails": FEAT_STYLO,
   },
@@ -1568,7 +1528,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 34580000,
     "description": "Honda Stylo 160 ABS menghadirkan keamanan berkendara premium dengan sistem ABS yang memastikan pengereman selalu terkontrol, dilengkapi semua fitur eksklusif Stylo 160 yang memukau.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/stylo-red-400x300pxl-1-02042026-044510.png"
+      getDefaultImageUrl("stylo-abs")
     ],
     "featureDetails": FEAT_STYLO_ABS,
   },
@@ -1580,7 +1540,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 36180000,
     "description": "Honda Stylo 160 ABS Special Edition adalah edisi paling eksklusif dari Stylo dengan warna dan grafis spesial yang terbatas, menjadikannya koleksi premium yang sangat istimewa.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/stylo-red-400x300pxl-1-02042026-044510.png"
+      getDefaultImageUrl("stylo-abs-se")
     ],
     "featureDetails": FEAT_STYLO_ABS,
   },
@@ -1592,7 +1552,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 36590000,
     "description": "Honda PCX 160 CBS adalah skuter premium yang mendefinisikan ulang standar kelas atasnya. Mesin eSP+ 160cc, bagasi 30 liter, Smart Key, dan desain futuristik menjadikan PCX 160 sebagai pilihan premium yang sesungguhnya.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/product-thumbnail-400x300-4-11022026-041017.png"
+      getDefaultImageUrl("pcx-160-cbs")
     ],
     "featureDetails": FEAT_PCX160,
   },
@@ -1604,7 +1564,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 40380000,
     "description": "Honda PCX 160 ABS melengkapi keunggulan PCX 160 dengan sistem ABS dual-channel yang memberikan keamanan pengereman kelas atas. Pilihan terbaik untuk pengguna yang mengutamakan keselamatan dan kenyamanan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/product-thumbnail-400x300-4-11022026-041017.png"
+      getDefaultImageUrl("pcx-160-abs")
     ],
     "featureDetails": FEAT_PCX160_ABS,
   },
@@ -1616,7 +1576,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 43540000,
     "description": "Honda PCX 160 ABS Roadsync adalah puncak kecanggihan skuter premium Honda dengan konektivitas Honda RoadSync untuk navigasi, panggilan, dan hiburan terintegrasi, dilengkapi ABS dual-channel untuk keamanan tertinggi.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/tr:w-550,f-auto/uploads/product/thumbnail/product-thumbnail-400x300-4-11022026-041017.png"
+      getDefaultImageUrl("pcx-160-abs-roadsync")
     ],
     "featureDetails": FEAT_PCX160_ROADSYNC,
   },
@@ -1628,7 +1588,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 38750000,
     "description": "Honda ADV 160 CBS adalah skuter adventure yang siap menaklukkan berbagai medan. Dengan HSTC, ground clearance tinggi, suspensi bertravel panjang, dan mesin eSP+ 160cc, ADV 160 membawa semangat petualangan sesungguhnya.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/product-thumbnail-400x300px-08092025-030701.png"
+      getDefaultImageUrl("adv-160-cbs")
     ],
     "featureDetails": FEAT_ADV160,
   },
@@ -1640,7 +1600,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 41590000,
     "description": "Honda ADV 160 ABS menghadirkan keamanan berkendara adventure yang lebih tinggi dengan sistem ABS yang bekerja sinergis dengan HSTC untuk kontrol traksi yang optimal di segala medan.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/product-thumbnail-400x300px-08092025-030701.png"
+      getDefaultImageUrl("adv-160-abs")
     ],
     "featureDetails": FEAT_ADV160_ABS,
   },
@@ -1652,7 +1612,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 43110000,
     "description": "Honda ADV 160 Roadsync adalah skuter adventure paling canggih dengan Honda RoadSync yang memungkinkan navigasi GPS dan konektivitas smartphone selama petualangan, dilengkapi ABS dan HSTC untuk keselamatan optimal.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/product-draft/meta/product-thumbnail-400x300px-08092025-030701.png"
+      getDefaultImageUrl("adv-160-roadsync")
     ],
     "featureDetails": FEAT_ADV160_ROADSYNC,
   },
@@ -1664,7 +1624,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 76660000,
     "description": "Honda CBR 250RR adalah supersport 250cc paling bertenaga di kelasnya. Mesin parallel-twin DOHC 250cc, Assist & Slipper Clutch, dan full fairing MotoGP-inspired menghadirkan pengalaman berkendara yang sesungguhnya.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cbr-250-std-bk")
     ],
     "featureDetails": FEAT_CBR250,
   },
@@ -1676,7 +1636,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 81020000,
     "description": "Honda CBR 250RR STD Matte Hypnotic Red hadir dalam warna merah matte yang memukau dan penuh semangat, menghadirkan tampilan racing premium yang semakin memukau di atas performa mesinnya yang garang.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cbr-250-std-mh")
     ],
     "featureDetails": FEAT_CBR250,
   },
@@ -1688,7 +1648,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 88430000,
     "description": "Honda CBR 250RR ABS Brilliant Black hadir dengan sistem ABS dual-channel dan warna hitam glossy yang menawan, menghadirkan keamanan berkendara supersport yang lebih komprehensif.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cbr-250-abs-bl")
     ],
     "featureDetails": FEAT_CBR250_ABS,
   },
@@ -1700,7 +1660,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 92480000,
     "description": "Honda CBR 250RR SP Quickshifter Asterisk Red adalah puncak kesempurnaan supersport 250cc dengan Quickshifter, ABS, rangka aluminium, dan warna eksklusif Asterisk Red yang memukau.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cbr-250-sp-qs-ar")
     ],
     "featureDetails": FEAT_CBR250_SP,
   },
@@ -1712,7 +1672,7 @@ export const mockMotorcycles: Motorcycle[] = [
     "priceCash": 93080000,
     "description": "Honda CBR 250RR SP Quickshifter Matte Pearl & Radical Red hadir dalam dua pilihan warna matte premium yang eksklusif, menegaskan posisinya sebagai supersport 250cc terbaik dan paling berteknologi.",
     "images": [
-      "https://ik.imagekit.io/zlt25mb52fx/uploads/page/meta/logo-ahm-3-21072023-032305.png"
+      getDefaultImageUrl("cbr-250-sp-qs-mp-rd")
     ],
     "featureDetails": FEAT_CBR250_SP,
   },
