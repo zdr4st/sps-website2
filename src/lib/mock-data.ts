@@ -987,7 +987,7 @@ export function getDefaultImageUrl(motorName: string): string {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
   
-  return `/api/images?model=${slug}`;
+  return `/api/images/${slug}`;
 }
 
 

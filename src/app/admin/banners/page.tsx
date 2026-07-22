@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import BannerForm from "./BannerForm";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminBanners() {
   const db = await getDb();
   const banners = db.homeBanners || [];

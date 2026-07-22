@@ -4,6 +4,8 @@ import { getDb } from "@/lib/db";
 import { formatRupiah } from "@/lib/utils";
 import { CsvUploader } from "@/components/CsvUploader";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminDashboard() {
   const db = await getDb();
   const motors = db.motorcycles;

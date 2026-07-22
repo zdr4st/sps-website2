@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import { getDb } from "@/lib/db";
 import { SimulasiKreditClient } from "@/components/SimulasiKreditClient";
 
+export const dynamic = "force-dynamic";
+
 export default async function SimulasiKreditPage() {
   const db = await getDb();
   

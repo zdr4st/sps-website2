@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { MotorcycleGallery } from "@/components/MotorcycleGallery";
 import { FeatureShowcase } from "@/components/FeatureShowcase";
 
+export const dynamic = "force-dynamic";
+
 export default async function MotorcycleDetail({
   params,
 }: {

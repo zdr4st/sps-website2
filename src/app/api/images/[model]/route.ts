@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const model = searchParams.get("model");
+export async function GET(req: NextRequest, { params }: { params: Promise<{ model: string }> }) {
+  const { model } = await params;
 
   if (!model) {
     return new NextResponse("Model parameter is required", { status: 400 });
@@ -63,7 +62,6 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    // 1. We proxy fetch from astra-honda.com to bypass ImageKit's 403 / 404 client-side blocking
     const pageUrl = `https://www.astra-honda.com/product/${targetSlug}`;
     
     const pageRes = await fetch(pageUrl, {
@@ -97,7 +95,6 @@ export async function GET(req: NextRequest) {
       }
 
       if (imageUrl) {
-        // Stream the image through our API to bypass ImageKit blocks
         const imageRes = await fetch(imageUrl, {
           headers: {
             'User-Agent': 'Mozilla/5.0',
@@ -117,7 +114,6 @@ export async function GET(req: NextRequest) {
       }
     }
 
-    // Fallback image if not found or blocked
     const fallbackImage = `https://placehold.co/600x400/eeeeee/333333?text=${encodeURIComponent(model.toUpperCase())}`;
     const fallbackRes = await fetch(fallbackImage);
     const fallbackBuffer = await fallbackRes.arrayBuffer();
