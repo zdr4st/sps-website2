@@ -92,11 +92,11 @@ export default async function AdminMotorcycleEdit({
                 <label className="block text-sm font-medium text-gray-700">Atau Gunakan Image URLs Manual</label>
                 <textarea 
                   name="images" 
-                  defaultValue={motor.images.join(", ")}
-                  rows={2}
+                  defaultValue={motor.images.join("\n")}
+                  rows={4}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-sm" 
                 />
-                <p className="text-xs text-gray-500 mt-1">Pisahkan dengan koma jika lebih dari satu.</p>
+                <p className="text-xs text-gray-500 mt-1">Satu URL per baris. Pisahkan dengan enter (baris baru) jika lebih dari satu.</p>
               </div>
 
               {motor.images.length > 0 && (

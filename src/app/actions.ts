@@ -175,9 +175,11 @@ export async function saveMotorcycle(id: string, formData: FormData) {
     const type = formData.get("type") as string;
     const description = formData.get("description") as string;
     
-    // Parse image URLs (comma separated)
+    // Parse image URLs (one per line)
     const imagesStr = formData.get("images") as string;
-    const images = imagesStr ? imagesStr.split(",").map(s => s.trim()).filter(Boolean) : [];
+    const images = imagesStr 
+      ? imagesStr.split(/\r?\n|, /).map(s => s.trim()).filter(Boolean) 
+      : [];
 
     // Handle uploaded file
     const imageFile = formData.get("imageFile") as File | null;
