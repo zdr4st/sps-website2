@@ -25,7 +25,7 @@ export function CsvUploader() {
         } else {
           setMessage({ type: "success", text: "Berhasil mengupdate katalog dari CSV!" });
         }
-      } catch (err) {
+      } catch {
         setMessage({ type: "error", text: "Terjadi kesalahan saat mengunggah file." });
       } finally {
         setLoading(false);

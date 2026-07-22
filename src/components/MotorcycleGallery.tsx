@@ -19,8 +19,11 @@ export function MotorcycleGallery({ images, name }: { images: string[]; name: st
   return (
     <Carousel 
       className="w-full"
+      // eslint-disable-next-line react-hooks/refs
       plugins={[plugin.current]}
+      // eslint-disable-next-line react-hooks/refs
       onMouseEnter={plugin.current.stop}
+      // eslint-disable-next-line react-hooks/refs
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>

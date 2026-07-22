@@ -3,7 +3,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import { getDb, saveDb, Database } from "@/lib/db";
+import { getDb, saveDb } from "@/lib/db";
 import { Motorcycle, CreditOption, getDefaultImageUrl } from "@/lib/mock-data";
 
 export async function login(formData: FormData) {
@@ -73,7 +73,7 @@ export async function uploadCsv(csvText: string) {
           
           const nextRow = lines[i+1];
           if (nextRow && nextRow.length > colOffset) {
-             let nextNameCol = nextRow[colOffset];
+             const nextNameCol = nextRow[colOffset];
              if (nextNameCol && /^[0-9.]+$/.test(nextNameCol.trim())) {
                  currentPrice = parseInt(nextNameCol.trim().replace(/\./g, ''), 10);
              }
@@ -159,7 +159,7 @@ export async function uploadCsv(csvText: string) {
     revalidatePath("/");
     
     return { success: true };
-  } catch (err) {
+  } catch {
     return { error: "Failed to parse CSV" };
   }
 }
@@ -207,7 +207,7 @@ export async function saveMotorcycle(id: string, formData: FormData) {
     revalidatePath("/admin");
     
     return { success: true };
-  } catch (error) {
+  } catch {
     return { error: "Gagal menyimpan data" };
   }
 }
@@ -226,9 +226,9 @@ export async function saveBanners(formData: FormData) {
     revalidatePath("/admin/banners");
     
     return { success: true };
-  } catch (error: any) {
+  } catch (error) {
     console.error("saveBanners error:", error);
-    return { error: error?.message || "Gagal menyimpan banner" };
+    return { error: error instanceof Error ? error.message : "Gagal menyimpan banner" };
   }
 }
 

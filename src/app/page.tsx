@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Catalog } from "@/components/Catalog";
 import { HomeBanner } from "@/components/HomeBanner";
 import { getDb } from "@/lib/db";

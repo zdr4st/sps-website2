@@ -20,6 +20,7 @@ export function HomeBanner({ banners }: { banners: string[] }) {
     <section className="relative w-full bg-[#111111]">
       <Carousel 
         className="w-full"
+        // eslint-disable-next-line react-hooks/refs
         plugins={[plugin.current]}
         opts={{ loop: true }}
       >

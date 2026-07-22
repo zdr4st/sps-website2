@@ -63,7 +63,7 @@ export async function getDb(): Promise<Database> {
       db.homeBanners = DEFAULT_BANNERS;
       try {
         await saveDb(db);
-      } catch (e) {
+      } catch {
         // ignore save error
       }
     }

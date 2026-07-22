@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { getDb } from "@/lib/db";
-import { saveBanners } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import BannerForm from "./BannerForm";

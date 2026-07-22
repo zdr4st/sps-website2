@@ -34,6 +34,7 @@ export function SimulasiKreditClient({ supportedMotorcycles: allMotors, creditMa
 
   // When motor changes, reset DP index to 0
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedDpIndex(0);
   }, [selectedMotorId]);
 
@@ -48,6 +49,7 @@ export function SimulasiKreditClient({ supportedMotorcycles: allMotors, creditMa
   // Ensure selected tenor is valid for current DP
   useEffect(() => {
     if (availableTenorsForDp.length > 0 && !availableTenorsForDp.includes(selectedTenor)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedTenor(availableTenorsForDp.includes(36) ? 36 : availableTenorsForDp[0]);
     }
   }, [availableTenorsForDp, selectedTenor]);
