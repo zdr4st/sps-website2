@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound, redirect } from "next/navigation";
 import { getDb } from "@/lib/db";
 import { saveMotorcycle } from "@/app/actions";
@@ -39,7 +40,7 @@ export default async function AdminMotorcycleEdit({
       </div>
 
       <div className="bg-white shadow rounded-lg p-6">
-        <form action={handleSubmit} className="space-y-6">
+        <form action={handleSubmit} className="space-y-6" encType="multipart/form-data">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700">Nama Motor</label>
@@ -68,15 +69,53 @@ export default async function AdminMotorcycleEdit({
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary" 
               />
             </div>
-            <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700">Image URLs (ImageKit astra-honda.com)</label>
-              <textarea 
-                name="images" 
-                defaultValue={motor.images.join(", ")}
-                rows={2}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-sm" 
-              />
-              <p className="text-xs text-gray-500 mt-1">URL gambar dari ImageKit astra-honda.com (ik.imagekit.io). Pisahkan dengan koma jika lebih dari satu.</p>
+            <div className="md:col-span-2 space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Upload Gambar Baru (Vercel Blob)</label>
+                <input 
+                  type="file" 
+                  accept="image/*"
+                  name="imageFile" 
+                  className="mt-1 block w-full text-sm text-gray-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-md file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-primary file:text-white
+                    hover:file:bg-primary/90
+                  " 
+                />
+                <p className="text-xs text-gray-500 mt-1">Upload gambar dari komputer Anda. Ini akan langsung tersimpan di Vercel Blob dan otomatis menjadi gambar utama.</p>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Atau Gunakan Image URLs Manual</label>
+                <textarea 
+                  name="images" 
+                  defaultValue={motor.images.join(", ")}
+                  rows={2}
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary focus:border-primary text-sm" 
+                />
+                <p className="text-xs text-gray-500 mt-1">Pisahkan dengan koma jika lebih dari satu.</p>
+              </div>
+
+              {motor.images.length > 0 && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Preview Gambar Saat Ini</label>
+                  <div className="flex gap-4 overflow-x-auto pb-2">
+                    {motor.images.map((img, idx) => (
+                      <div key={idx} className="relative w-32 h-32 flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
+                        <Image 
+                          src={img} 
+                          alt={`Preview ${idx}`}
+                          fill
+                          className="object-contain"
+                          unoptimized={img.includes('/api/images')}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Feature Details editor */}

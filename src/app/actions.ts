@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { getDb, saveDb } from "@/lib/db";
+import { put } from '@vercel/blob';
 import { Motorcycle, CreditOption, getDefaultImageUrl } from "@/lib/mock-data";
 
 export async function login(formData: FormData) {
@@ -177,6 +178,14 @@ export async function saveMotorcycle(id: string, formData: FormData) {
     // Parse image URLs (comma separated)
     const imagesStr = formData.get("images") as string;
     const images = imagesStr ? imagesStr.split(",").map(s => s.trim()).filter(Boolean) : [];
+
+    // Handle uploaded file
+    const imageFile = formData.get("imageFile") as File | null;
+    if (imageFile && imageFile.size > 0) {
+      const blob = await put(`sps-images/${Date.now()}-${imageFile.name}`, imageFile, { access: 'public' });
+      // Prepend to images array
+      images.unshift(blob.url);
+    }
 
     // Parse featureDetails from JSON submitted by the admin form
     let featureDetails = db.motorcycles[motorIndex].featureDetails;
