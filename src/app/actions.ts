@@ -1,32 +1,42 @@
 "use server";
 
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import { getDb, saveDb } from "@/lib/db";
-import { put } from '@vercel/blob';
-import { Motorcycle, CreditOption, getDefaultImageUrl } from "@/lib/mock-data";
+import {
+  verifyAdmin,
+  setSessionCookie,
+  clearSessionCookie,
+} from "@/lib/supabase-server";
+import {
+  getMotorcycleById,
+  updateMotorcycle,
+  bulkUpsertFromCsv,
+  saveBannersToDb,
+  uploadImage,
+} from "@/lib/supabase";
+import type { Motorcycle, CreditOption } from "@/lib/types";
+import { getDefaultImageUrl } from "@/lib/types";
 
 export async function login(formData: FormData) {
-  const password = formData.get("password");
-  
-  if (password === "admin123") {
-    const cookieStore = await cookies();
-    cookieStore.set("admin_token", "authorized", {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      maxAge: 60 * 60 * 24 * 7, // 1 week
-      path: "/",
-    });
-    redirect("/admin");
-  } else {
-    return { error: "Password salah!" };
+  const email = formData.get("email") as string;
+  const password = formData.get("password") as string;
+
+  if (!email || !password) {
+    return { error: "Email dan password harus diisi." };
   }
+
+  const result = await verifyAdmin(email, password);
+
+  if (result.success && result.token) {
+    await setSessionCookie(result.token);
+    redirect("/admin");
+  }
+
+  return { error: result.error || "Email atau password salah!" };
 }
 
 export async function logout() {
-  const cookieStore = await cookies();
-  cookieStore.delete("admin_token");
+  await clearSessionCookie();
   redirect("/admin/login");
 }
 
@@ -139,37 +149,22 @@ export async function uploadCsv(csvText: string) {
        }
     });
 
-    const db = await getDb();
-    
-    // We only update the ones present in the CSV, leaving existing details (like descriptions/images) intact if they match by ID
-    validMotorcycles.forEach(newMotor => {
-      const existing = db.motorcycles.find(m => m.id === newMotor.id);
-      if (existing) {
-         // Keep existing images, description, featureDetails
-         newMotor.images = existing.images;
-         newMotor.description = existing.description;
-         newMotor.featureDetails = existing.featureDetails;
-         // Only update price & type from CSV
-      }
-    });
+    // Bulk upsert to Supabase (preserves existing images/descriptions)
+    await bulkUpsertFromCsv(validMotorcycles, creditMatrix);
 
-    db.motorcycles = validMotorcycles;
-    db.creditMatrix = creditMatrix;
-    
-    await saveDb(db);
     revalidatePath("/");
     
     return { success: true };
-  } catch {
+  } catch (err) {
+    console.error("uploadCsv error:", err);
     return { error: "Failed to parse CSV" };
   }
 }
 
 export async function saveMotorcycle(id: string, formData: FormData) {
   try {
-    const db = await getDb();
-    const motorIndex = db.motorcycles.findIndex(m => m.id === id);
-    if (motorIndex === -1) return { error: "Motorcycle not found" };
+    const existingMotor = await getMotorcycleById(id);
+    if (!existingMotor) return { error: "Motorcycle not found" };
 
     const name = formData.get("name") as string;
     const type = formData.get("type") as string;
@@ -184,13 +179,17 @@ export async function saveMotorcycle(id: string, formData: FormData) {
     // Handle uploaded file
     const imageFile = formData.get("imageFile") as File | null;
     if (imageFile && imageFile.size > 0) {
-      const blob = await put(`sps-images/${Date.now()}-${imageFile.name}`, imageFile, { access: 'public' });
-      // Prepend to images array
-      images.unshift(blob.url);
+      try {
+        const uploadedUrl = await uploadImage(imageFile, 'motorcycles');
+        images.unshift(uploadedUrl);
+      } catch (err) {
+        console.error("Image upload failed:", err);
+        // Continue without the uploaded image
+      }
     }
 
     // Parse featureDetails from JSON submitted by the admin form
-    let featureDetails = db.motorcycles[motorIndex].featureDetails;
+    let featureDetails = existingMotor.featureDetails;
     const featureDetailsRaw = formData.get("featureDetails") as string;
     if (featureDetailsRaw) {
       try {
@@ -217,44 +216,51 @@ export async function saveMotorcycle(id: string, formData: FormData) {
       
       let finalImageUrl = colorUrl || "";
       if (colorFile && colorFile.size > 0) {
-        const blob = await put(`sps-images/${Date.now()}-${colorFile.name}`, colorFile, { access: 'public' });
-        finalImageUrl = blob.url;
+        try {
+          finalImageUrl = await uploadImage(colorFile, 'colors');
+        } catch (err) {
+          console.error("Color image upload failed:", err);
+        }
       }
       
       colors.push({ name: colorName, image: finalImageUrl });
     }
 
-    db.motorcycles[motorIndex] = {
-      ...db.motorcycles[motorIndex],
+    const result = await updateMotorcycle(id, {
       name,
       type,
       description,
-      images: images.length > 0 ? images : db.motorcycles[motorIndex].images,
+      images: images.length > 0 ? images : undefined,
       colors: colors.length > 0 ? colors : undefined,
       featureDetails,
-    };
+    });
 
-    await saveDb(db);
+    if (!result.success) {
+      return { error: result.error || "Gagal menyimpan data" };
+    }
+
     revalidatePath("/");
     revalidatePath(`/motorcycle/${id}`);
     revalidatePath("/admin");
     
     return { success: true };
-  } catch {
-    return { error: "Gagal menyimpan data" };
+  } catch (err) {
+    console.error("saveMotorcycle error:", err);
+    return { error: err instanceof Error ? err.message : "Gagal menyimpan data" };
   }
 }
 
 export async function saveBanners(formData: FormData) {
   try {
-    const db = await getDb();
-    
     const urlsStr = formData.get("urls") as string;
     const bannerUrls = urlsStr ? urlsStr.split("\n").map(s => s.trim()).filter(Boolean) : [];
 
-    db.homeBanners = bannerUrls;
+    const result = await saveBannersToDb(bannerUrls);
     
-    await saveDb(db);
+    if (!result.success) {
+      return { error: result.error || "Gagal menyimpan banner" };
+    }
+
     revalidatePath("/");
     revalidatePath("/admin/banners");
     
@@ -264,4 +270,3 @@ export async function saveBanners(formData: FormData) {
     return { error: error instanceof Error ? error.message : "Gagal menyimpan banner" };
   }
 }
-

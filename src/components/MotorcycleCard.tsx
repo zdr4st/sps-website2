@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Motorcycle } from "@/lib/mock-data";
+import { Motorcycle } from "@/lib/types";
 import { formatRupiah, generateWhatsAppLink } from "@/lib/utils";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -17,6 +17,7 @@ export function MotorcycleCard({ motorcycle }: MotorcycleCardProps) {
           src={motorcycle.images[0]}
           alt={motorcycle.name}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
           className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
         />
       </div>

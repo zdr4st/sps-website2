@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ColorVariant } from "@/lib/mock-data";
+import { ColorVariant } from "@/lib/types";
 
 export function MotorcycleColorEditor({ initialColors }: { initialColors?: ColorVariant[] }) {
   const [colors, setColors] = useState<ColorVariant[]>(initialColors || []);

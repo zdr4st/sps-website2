@@ -32,6 +32,8 @@ export function HomeBanner({ banners }: { banners: string[] }) {
                    src={banner}
                    alt={`Banner ${index + 1}`}
                    fill
+                   sizes="100vw"
+                   quality={75}
                    className="object-cover"
                    priority={index === 0}
                  />

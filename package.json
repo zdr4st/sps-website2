@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
-    "@vercel/blob": "^2.6.0",
+    "@supabase/supabase-js": "^2.112.2",
+
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.6.0",
@@ -28,7 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "cheerio": "^1.2.0",
+
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "tailwindcss": "^4",

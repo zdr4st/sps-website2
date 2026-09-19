@@ -1,19 +1,20 @@
 import { Catalog } from "@/components/Catalog";
 import { HomeBanner } from "@/components/HomeBanner";
-import { getDb } from "@/lib/db";
-
-export const dynamic = "force-dynamic";
+import { getMotorcycles, getBanners } from "@/lib/supabase";
 
 export default async function Home() {
-  const db = await getDb();
+  const [motorcycles, banners] = await Promise.all([
+    getMotorcycles(),
+    getBanners(),
+  ]);
   
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col">
       {/* Hero Section */}
-      <HomeBanner banners={db.homeBanners || []} />
+      <HomeBanner banners={banners} />
 
       {/* Catalog Grid Section (Client Component) */}
-      <Catalog motorcycles={db.motorcycles} />
+      <Catalog motorcycles={motorcycles} />
       
     </main>
   );

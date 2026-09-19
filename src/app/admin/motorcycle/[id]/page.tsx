@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound, redirect } from "next/navigation";
-import { getDb } from "@/lib/db";
+import { getMotorcycleById } from "@/lib/supabase";
 import { saveMotorcycle } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { MotorcycleColorEditor } from "@/components/MotorcycleColorEditor";
+
+export const dynamic = "force-dynamic";
 
 export default async function AdminMotorcycleEdit({
   params,
@@ -12,8 +14,7 @@ export default async function AdminMotorcycleEdit({
   params: Promise<{ id: string }>;
 }) {
   const resolvedParams = await params;
-  const db = await getDb();
-  const motor = db.motorcycles.find((m) => m.id === resolvedParams.id);
+  const motor = await getMotorcycleById(resolvedParams.id);
 
   if (!motor) {
     notFound();
@@ -74,7 +75,7 @@ export default async function AdminMotorcycleEdit({
             </div>
             <div className="md:col-span-2 space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700">Upload Gambar Baru (Vercel Blob)</label>
+                <label className="block text-sm font-medium text-gray-700">Upload Gambar Baru</label>
                 <input 
                   type="file" 
                   accept="image/*"
@@ -87,7 +88,7 @@ export default async function AdminMotorcycleEdit({
                     hover:file:bg-primary/90
                   " 
                 />
-                <p className="text-xs text-gray-500 mt-1">Upload gambar dari komputer Anda. Ini akan langsung tersimpan di Vercel Blob dan otomatis menjadi gambar utama.</p>
+                <p className="text-xs text-gray-500 mt-1">Upload gambar dari komputer Anda. Ini akan langsung tersimpan dan otomatis menjadi gambar utama.</p>
               </div>
 
               <div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FeatureDetail } from "@/lib/mock-data";
+import { FeatureDetail } from "@/lib/types";
 
 interface FeatureShowcaseProps {
   features: FeatureDetail[];

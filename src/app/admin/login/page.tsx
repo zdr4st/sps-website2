@@ -6,11 +6,20 @@ import { Button } from "@/components/ui/button";
 
 export default function LoginPage() {
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (formData: FormData) => {
-    const res = await login(formData);
-    if (res?.error) {
-      setError(res.error);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await login(formData);
+      if (res?.error) {
+        setError(res.error);
+      }
+    } catch {
+      // redirect throws — this is expected behavior
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -29,6 +38,23 @@ export default function LoginPage() {
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 border border-gray-200">
           <form action={handleSubmit} className="space-y-6">
             <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Email
+              </label>
+              <div className="mt-1">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
+                  placeholder="admin@spsmotor.com"
+                />
+              </div>
+            </div>
+
+            <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                 Password
               </label>
@@ -37,6 +63,7 @@ export default function LoginPage() {
                   id="password"
                   name="password"
                   type="password"
+                  autoComplete="current-password"
                   required
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
                 />
@@ -44,12 +71,18 @@ export default function LoginPage() {
             </div>
 
             {error && (
-              <div className="text-red-600 text-sm font-medium">{error}</div>
+              <div className="bg-red-50 border border-red-200 rounded-md p-3 text-red-600 text-sm font-medium">
+                {error}
+              </div>
             )}
 
             <div>
-              <Button type="submit" className="w-full h-10 font-bold bg-primary hover:bg-primary/90 text-white">
-                Masuk
+              <Button
+                type="submit"
+                disabled={loading}
+                className="w-full h-10 font-bold bg-primary hover:bg-primary/90 text-white disabled:opacity-50"
+              >
+                {loading ? "Memproses..." : "Masuk"}
               </Button>
             </div>
           </form>

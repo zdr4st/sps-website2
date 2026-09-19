@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getDb } from "@/lib/db";
+import { getMotorcycleById } from "@/lib/supabase";
 import { formatRupiah, generateWhatsAppLink } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 import { MotorcycleGallery } from "@/components/MotorcycleGallery";
 import { FeatureShowcase } from "@/components/FeatureShowcase";
 
-export const dynamic = "force-dynamic";
 
 export default async function MotorcycleDetail({
   params,
@@ -15,8 +14,7 @@ export default async function MotorcycleDetail({
   params: Promise<{ id: string }>;
 }) {
   const resolvedParams = await params;
-  const db = await getDb();
-  const motor = db.motorcycles.find((m) => m.id === resolvedParams.id);
+  const motor = await getMotorcycleById(resolvedParams.id);
 
   if (!motor) {
     notFound();

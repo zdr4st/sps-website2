@@ -10,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ColorVariant } from "@/lib/mock-data";
+import { ColorVariant } from "@/lib/types";
 
 export function MotorcycleGallery({ images, name, colors }: { images: string[]; name: string; colors?: ColorVariant[] }) {
   const plugin = React.useRef(

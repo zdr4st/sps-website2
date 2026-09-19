@@ -1,14 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getDb } from "@/lib/db";
+import { getMotorcycles, getCreditMatrix } from "@/lib/supabase";
 import { formatRupiah } from "@/lib/utils";
 import { CsvUploader } from "@/components/CsvUploader";
 
-export const dynamic = "force-dynamic";
 
 export default async function AdminDashboard() {
-  const db = await getDb();
-  const motors = db.motorcycles;
+  const [motors, creditMatrix] = await Promise.all([
+    getMotorcycles(),
+    getCreditMatrix(),
+  ]);
 
   return (
     <div>
@@ -45,7 +46,7 @@ export default async function AdminDashboard() {
                             {formatRupiah(motor.priceCash)}
                           </p>
                           <p className="mt-2 flex items-center text-sm text-gray-500">
-                            {db.creditMatrix[motor.id]?.length || 0} Opsi DP
+                            {creditMatrix[motor.id]?.length || 0} Opsi DP
                           </p>
                         </div>
                       </div>

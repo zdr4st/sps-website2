@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { Motorcycle, CreditOption } from "@/lib/mock-data";
+import { Motorcycle, CreditOption } from "@/lib/types";
 import { formatRupiah } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 

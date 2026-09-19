@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getDb } from "@/lib/db";
+import { getBanners } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import BannerForm from "./BannerForm";
@@ -7,8 +7,7 @@ import BannerForm from "./BannerForm";
 export const dynamic = "force-dynamic";
 
 export default async function AdminBanners() {
-  const db = await getDb();
-  const banners = db.homeBanners || [];
+  const banners = await getBanners();
 
   return (
     <div>

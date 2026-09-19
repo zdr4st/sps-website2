@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { MotorcycleCard } from "@/components/MotorcycleCard";
-import { Motorcycle } from "@/lib/mock-data";
+import { Motorcycle } from "@/lib/types";
 
 interface CatalogProps {
   motorcycles: Motorcycle[];
